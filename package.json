@@ -1,0 +1,26 @@
+{
+  "name": "react-native-turnstile",
+  "version": "1.0.0",
+  "description": "A wrapper for CloudFlare Turnstile for use in React Native apps.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CloudFlare",
+    "Turnstile",
+    "React",
+    "Native"
+  ],
+  "author": "Jay Simons",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": ">=18.0",
+    "react-native": ">=0.74",
+    "react-native-webview": ">=13.8.6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "typescript": "^5.5.4"
+  }
+}
