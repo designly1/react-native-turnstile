@@ -11,7 +11,14 @@ The cookies used by CloudFlare Turnstile are incompatible with `react-native-web
 ## Installation
 
 ```sh
-npm i react-native-turnstile
+npm i react-native-turnstile react-native-webview
+```
+
+If you're running Expo, then:
+
+```sh
+expo install react-native-webview
+npm i react-native-turnsile
 ```
 
 ## Usage
