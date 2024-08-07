@@ -1,6 +1,6 @@
 {
   "name": "react-native-turnstile",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A wrapper for CloudFlare Turnstile for use in React Native apps.",
   "repository": {
     "type": "git",

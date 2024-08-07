@@ -1,1 +1,1 @@
-export const PUBLIC_DOMAIN = 'https://d.designly.biz';
+export const PUBLIC_DOMAIN = 'https://turnstile.1337707.xyz';
