@@ -18,7 +18,7 @@ If you're running Expo, then:
 
 ```sh
 expo install react-native-webview
-npm i react-native-turnsile
+npm i react-native-turnstile
 ```
 
 ## Usage
