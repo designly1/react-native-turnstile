@@ -72,6 +72,7 @@ set the `autoResetOnExpire` prop to true or reset the widget yourself using the 
 | retryInterval?     | `number`               | interval of retries in ms                             |
 | autoResetOnExpire? | `boolean`              | automatically reset the widget when the token expires |
 | id?                | `string`               | id of the div                                         |
+| backgroundColor?   | `string`               | background color of the hosted Turnstile page (default `#ffffff`) |
 | resetRef?          | `TurnstileResetRef`    | ref in which to inject the reset()                    |
 | className?         | `string`               | only provided to facilitate NativeWind classes        |
 | style?             | `StyleProp<ViewStyle>` | passed to the RN View container                       |

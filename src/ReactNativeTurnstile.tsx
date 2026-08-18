@@ -24,7 +24,7 @@
 
 // @ts-ignore
 import React, { useEffect } from 'react';
-import { WebView } from 'react-native-webview';
+import RNCWebView from 'react-native-webview';
 import { View, StyleSheet } from 'react-native';
 import { useRef } from 'react';
 
@@ -32,6 +32,7 @@ import { PUBLIC_DOMAIN } from './constants';
 
 import type { SupportedLanguages } from 'turnstile-types';
 import type { StyleProp, ViewStyle } from 'react-native';
+import type { WebViewMessageEvent } from 'react-native-webview';
 
 export interface TurnstileProps extends TurnstileCallbacks {
 	sitekey: string;
@@ -50,6 +51,7 @@ export interface TurnstileProps extends TurnstileCallbacks {
 	appearance?: 'always' | 'execute' | 'interaction-only';
 	execution?: 'render' | 'execute';
 	id?: string;
+	backgroundColor?: string;
 	resetRef?: TurnstileResetRef;
 	className?: string;
 	style?: StyleProp<ViewStyle>;
@@ -121,12 +123,13 @@ export default function ReactNativeTurnstile(props: TurnstileProps) {
 		appearance,
 		execution,
 		id,
+		backgroundColor,
 		resetRef,
 		style,
 		webviewStyle,
 	} = props;
 
-	const webviewRef = useRef<WebView>(null);
+	const webviewRef = useRef<InstanceType<typeof RNCWebView>>(null);
 
 	useEffect(() => {
 		if (resetRef) {
@@ -157,6 +160,7 @@ export default function ReactNativeTurnstile(props: TurnstileProps) {
 	if (appearance) params.append('appearance', appearance);
 	if (execution) params.append('execution', execution);
 	if (id) params.append('id', id);
+	if (backgroundColor) params.append('backgroundColor', backgroundColor);
 
 	const url = `${PUBLIC_DOMAIN}/turnstile?${params.toString()}`;
 
@@ -171,10 +175,10 @@ export default function ReactNativeTurnstile(props: TurnstileProps) {
 	return (
 		<>
 			<View style={computedStyles}>
-				<WebView
+				<RNCWebView
 					ref={webviewRef}
 					source={{ uri: url }}
-					onMessage={event => {
+					onMessage={(event: WebViewMessageEvent) => {
 						try {
 							const eventData = JSON.parse(event.nativeEvent.data) as ReactNativeTurnstleEvent;
 							if (!eventData.event)

@@ -6,13 +6,12 @@
     "declaration": true,
     "jsx": "react",
     "sourceMap": true,
-    "removeComments": false
+    "removeComments": false,
+    "types": [],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM"]
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/__tests__/*"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "**/__tests__/*"]
 }
